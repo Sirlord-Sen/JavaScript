@@ -1,0 +1,243 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above three meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <title>Item Lister</title>
+
+        <!-- Bootstrap -->
+        <link href="bootstrap.min.css" rel="stylesheet" type="text/css">
+        
+        <style type="text/css">
+        </style>
+
+        <!-- HTML5 shim and Respond.js for IE8 support of the HTML5 elememts and media queries -->
+        <!-- WARNING: Respond.js deosnt work if you view the page via file:// -->
+    </head>
+
+    <body>
+        <header id="main-header" class="bg-success p-4 text-white mb-3">
+            <div class="container">
+                <h1 id="header-title">Item Lister</h1>
+            </div>
+        </header>
+        <div class="container">
+            <div id="main" class="card card-body">
+                <h2 class="card-title">Add Items</h2>
+                <form class="form-inline mb-3">
+                    <input type="text" class="form-control mr-2">
+                    <input type="submit" class="btn btn-dark" value="Submit">
+                </form>
+                <h2 class="title">Items</h2>
+                <ul id="items" class="list-group">
+                    <li class="list-group-item">Item 1</li>
+                    <li class="list-group-item">Item 2</li>
+                    <li class="list-group-item">Item 3</li>
+                    <li class="list-group-item">Item 4</li>
+                </ul>
+                <div id="output"></div>
+                <br>
+                <div id="box" style="background: #f4f4f4; width: 400px; height: 200px"><h3 class="lead">Hello</h3></div>
+                <br>
+                <button class="btn btn-dark btn-block" id="button">Click Here</button>
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+            
+            // Discovering the properties of the DOM //
+//            console.log(document.domain);
+//            console.log(document.URL);
+//            
+//            document.title = "God"; /*This can be used to change the content of the property*/
+//            console.log(document.title);
+//            console.log(document.doctype);
+//            console.log(document.head);
+//            console.log(document.body);
+//            console.log(document.all[7]);
+//            console.log(document.links);
+//            console.log(document.images);
+            
+            
+            // Selectors //
+            // 1. getElementById()
+            // 2. getElementByClassName()
+            // 3. getElementByTagName()
+            // 4. querySelector()
+            // 5. querySelectorAll()
+            
+            //1. GETELEMENTBYID //
+//            var header = document.getElementById("main-header");
+//            console.log(header);
+//            header.textContent = "Hello"; // This one does not take care of the styles.
+//            header.innerText = "Goodbye"; // This one takes account of the styles.
+//            header.innerHTML = '<h1 class="">Item Lister</h1>'
+//            
+//            header.style.borderBottom = 'solid 3px #000';
+            
+            //2. GETELEMENTBYCLASSNAME // 
+//            var items = document.getElementsByClassName("list-group-item")
+//            console.log(items[1]);
+//            items[1].style.backgroundColor= "#f4f4f4"; /*Note that this method does not allow for the styling of the entire array. Therefore, a loop must be used*/
+//            for(let item of items){
+//                item.style.backgroundColor = '#f4f4f4';
+//            }
+            
+            //3. GETELEMENTBYTAGNAME: Works same as previous // 
+//            var lists = document.getElementsByTagName("li");
+//            console.log(lists[1]);
+//            lists[1].style.backgroundColor = '#000';
+//            lists[1].style.color = '#f4f4f4';
+//            
+//            for (let list of lists) {
+//                list.style.backgroundColor = '#f4f4f4';
+//                list.style.color = 'black';
+//            }
+            
+            //4. QUERYSELECTOR: This can select id, classes, tag //
+//            var header = document.querySelector('.list-group-item');
+//            header.style.borderBottom = 'solid 4px #ccc';
+//            var input = document.querySelector('input');
+//            input.value = "Hello World";
+//            var submit = document.querySelector('input[type = "submit"]');
+//            submit.value = "SEND";
+//            var items = document.querySelector('.list-group-item');
+//            items.style.color = 'red';
+//            var lastItem = document.querySelector('.list-group-item:last-child');
+//            lastItem.style.color = 'blue';
+//            var secondItem = document.querySelector('.list-group-item:nth-child(2)');
+//            secondItem.style.color = 'green';
+            
+        
+            // TRAVERSING THE DOM //
+            
+            // TEXT //
+//            var li = document.querySelector("li");
+//            console.log(li.textContent); // This grabs only the text content.
+//            
+//            var p = document.querySelector("p");
+//            console.log(p.innerHTML); // This grabs the content of the element including html elements inside
+            
+            // ATTRIBUTES //
+            //set attribute works on only single  elements so if it is an array, then we loop.
+//            var link = document.querySelector("a");
+//            link.getAttribute("href"); // This gives you the href attribute of the <a> tag!
+//            link.setAttribute("href", "www.google.com"); // This changes the href from whatever it was to the new one.
+//            
+//            var img = document.querySelector("img")[0];
+//            img.getAttribute("src");
+//            img.setAttribute("src", "carol.png");
+            
+            
+            // NODES //
+//            var itemList = document.querySelector('#items');
+//            console.log(itemList.parentNode);
+//            
+//            itemList.parentElement.style.backgroundColor = '#f4f4f4';
+//            
+//            console.log(itemList.parentElement.parentElement);
+//            console.log(itemList.children);
+//            console.log(itemList.firstElementChild);
+//            console.log(itemList.lastElementChild);
+//            
+//            var form = document.querySelector('form');
+//            console.log(form.nextElementSibling);
+//            console.log(form.previousElementSibling);
+            
+            // CREATING ELEMENTS //
+//            var newDiv = document.createElement('div');
+//            newDiv.className = 'lead';
+//            newDiv.id = 'hello';
+//            newDiv.setAttribute ('title', 'New Div');
+//            console.log(newDiv);
+//            
+//            var para = document.createElement('p');
+//            para.className = 'lead';
+//            
+//            var newDivText = document.createTextNode("Hello Folks");
+//            para.appendChild(newDivText);
+//            
+//            newDiv.appendChild(para);
+//            console.log(newDiv);
+//            
+//            var container = document.querySelector('header .container')
+//            var h1 = document.querySelector('header h1');
+//            container.insertBefore(newDiv, h1);
+            
+            
+            // EVENTS //
+//            var button = document.getElementById('button').addEventListener('click', buttonClick);
+            
+//            function buttonClick(event) {
+////                console.log('I love Angel');
+////                document.getElementById('main').style.backgroundColor = '#f4f4f4';
+////                document.querySelector('h1').textContent = "You're logged in";
+////                console.log(event);
+//                
+////                console.log(event.target);
+////                console.log(event.target.id);
+////                console.log(event.target.className);
+////                console.log(event.target.classList);
+////                document.getElementById('output').textContent = "The button has been clicked";
+//                
+////                console.log(event.type);
+//                
+//                /* Client is for the browser */
+////                console.log(event.clientX);
+////                console.log(event.clientY);
+//                
+//                /* Offset is for the element */
+////                console.log(event.offsetX);
+////                console.log(event.offsetY);
+//                
+//                /* Using the keydown functions */
+////                console.log(event.altKey);
+////                console.log(event.ctrlKey);
+////                console.log(event.shiftKey);
+//                   
+//            }
+            
+            
+            var button = document.getElementById('button');
+            var box = document.getElementById('box');
+            
+//            button.addEventListener('click', runEvent);
+//            button.addEventListener('dblclick', runEvent);
+//            button.addEventListener('mouseup', runEvent);
+//            button.addEventListener('mousedown', runEvent);
+           
+//            box.addEventListener('mouseenter', runEvent);
+//            box.addEventListener('mouseleave', runEvent);
+//            box.addEventListener('mouseover', runEvent);
+//            box.addEventListener('mouseout', runEvent);
+//            box.addEventListener('mousemove', runEvent);
+            
+            
+            var itemInput = document.querySelector('input[type= "text"]');
+            var form = document.querySelector('form');
+            
+//            itemInput.addEventListener('keydown', runEvent);
+//            itemInput.addEventListener('keyup', runEvent);
+//            itemInput.addEventListener('keypress', runEvent);
+            
+            function runEvent(event) {
+                console.log('EVENT:', event.type);
+                
+//                console.log(event.target.value);
+//                document.getElementById('output').innerHTML='<h3>'+event.target.value+'</h3>'; 
+                
+//                var output = document.getElementById('output');
+//                output.innerHTML = "<h3>MouseX:" +event.offsetX+ "</h3><h3>MouseY:" +event.offsetY+ "</h3>";
+                
+//                box.style.backgroundColor = "rgb("+event.offsetX+","+event.offsetY+", 40)"
+                
+                
+            } 
+            
+            
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Variables</title>
+    </head>
+    
+    <body>
+        
+        <h1>JavaScript Variables</h1>
+        
+        <script type="text/javascript">
+            
+            //var bucketOnBeach;
+            //bucketOnBeach = "sand, stones, shovel";
+            //document.write(bucketOnBeach);
+            
+            var bucketOnBeach = "sand, stones, rocks"
+            document.write(bucketOnBeach); //Please note that when you declare the same variable with different things assigned to each one of them, the command you give would take the last variable assign you gave it.
+            
+            document.write("<br><br>");
+            
+            var a = 12;
+            var b = 24;
+            var c = a * b;
+            
+            document.write(c);
+            
+            document.write("<br><br>");
+            
+            var firstname;
+            var lastname;
+            var dateofbirth;
+            
+        /*
+        1. Identifiers are case sensitive.
+        2. They can only begin with letters.
+        3. There are reserved words you cant use as variables. eg. javascript. for more, (http://www.w3schools.com/js/js_reserved.asp)
+        */
+            
+            var x = 99.7; // Numbers.
+            var fancyPants = "String"; // This is a string and they are always in double qoutation marks.
+            var stringNumber = "3.14"; // Therefore, this is also a string though it is a number.
+            
+            var firstname = "Lord", lastname = "Wiafe", likestoplay = "true"; // This would work because JS sees it as a var.
+            
+            // You can do math!
+            
+            var x = 100,
+                y = 2.462,
+                z = 40.99;
+            
+            var total = x * y * z;
+            document.write(total);
+            
+            document.write("<br><br>");
+            
+            //CONCATENATION: This is used to store an identifier you dont know. Like someone types his first and last name.
+            var foo = "Web" + " " + "Developer";
+            document.write(foo);
+            
+            document.write("<br><br>");
+            
+            var fName = "Lord",
+                lName = "Hussey",
+                fullName = fName + " " + lName;
+            
+            document.write(fullName);
+                
+            document.write("<br><br>");
+            
+            var blurb = "Andy";
+            blurb += " " + "Dem"; // the += concatenation is used to add more to the variable that has already been declared.
+            
+            document.write(blurb);
+            
+            document.write("<br><br>");
+            
+            var e = "hello" + 3.14; // when you add a number to a string, it is always treated as a string.
+            document.write(e);
+            
+            
+        </script>
+    </body>
+</html>

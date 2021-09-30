@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arrays</title>
+    </head>
+    
+    <body>
+        
+        <h1>Arrays</h1>
+        
+        <script type="text/javascript">
+            
+            var myVariable = "sand, shovel, water"; // The variables sees everything within it as a single element.
+            
+            var myArray = ["sand", "shovel", "water"]; 
+            /* 
+            . This is an array. 
+            . It helps you to grab out each of the elements in the variabe.
+            . They use index. Therefore the first element within the array would be assigned 0 and the number continues.
+            */
+            
+            document.write( myArray[2] );
+            
+            document.write("<br><br>");
+            
+            var favFoods = [ "pulled pork", "pizza", "mexican mango", "pineapple" ];
+            
+            for( var i = 0; i < favFoods.length; i++ ) // i represents index.
+            {
+                
+                document.write( favFoods[i] );
+                document.write("<br>");
+            }
+            
+            document.write("<br><br>");
+            
+            // MULTIPLE ARRAYS
+            
+            var myFriends = [
+                ["Lord", "Male", 19],
+                ["Franklin", "Male", 20],
+                ["Yaa", "Female", 20]
+            ];
+            
+            document.write(myFriends[2][0]); //We use index to grab them out.
+            
+            
+            
+        </script>
+    </body>
+</html>

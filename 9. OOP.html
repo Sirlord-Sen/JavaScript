@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Object Oriented Javascript</title>
+    </head>
+    
+    <body>
+        <style type="text/css">
+            h1 {
+                text-align: center;
+                color: #444;
+                font-family: 'Trebuchet MS';
+                margin: 60px auto;
+            }
+        </style>
+        
+        <h1>Object Oriented Programming</h1>
+        
+        <script type="text/javascript">
+            
+//            Object Literals
+            
+//            var userOne = {
+//                email: 'lodwaf12@gmail.com',
+//                name: 'Lord',
+//                logIn () {
+//                    console.log(this.email, "has logged in");
+//                },
+//                logOut () {
+//                    console.log(this.email, "has logged out")
+//                }
+//            }
+//            
+//            console.log(userOne.name);
+            
+            
+            
+//            Classes
+            
+            
+            class Users {
+                constructor (email, name, password) {
+                    this.email = email;
+                    this.name = name;
+                    this.password = password;
+                }
+                
+                logIn() {
+                    console.log(this.email, "just logged in");
+                    return this;
+                }
+                
+                logOut() {
+                    console.log(this.email, "just logged out");
+                    return this;
+                }
+             }
+            
+            class Admin extends Users {
+                deleteUser(user){
+                    users = users.filter(u => u.email != user.email);
+                } 
+            }
+            
+            var userOne = new Users ("lodwaf12@gmail.com","Lord Wiafe", "I love God.");
+            var userTwo = new Users ("angelopokua12@gmail.com","Angel Opokua", "lordem");
+            var adminOne = new Admin ("benwaf@gmail.com", "Benjamin Wiafe", "I am Ben");
+            var users = [userOne, userTwo, adminOne];
+            
+            userOne.logOut().logIn();
+            adminOne.deleteUser(userOne);
+            console.log(users);
+            
+            
+            
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tip Calculator</title>
+        
+        <link rel="stylesheet" type="text/css" href="7.2.%20Style(tipcalculator).css">
+    </head>
+    
+    <body>
+        
+        <div id="container">
+            <h1>Tip Calculator</h1>
+            
+            <div id="calculator">
+                
+                <form>
+                    <label>How much was your bill? <br>$
+                        <input type="number" min="0" placeholder="Amount" id="billAmount">
+                    </label>
+                    
+                    <label>How was your service? <br>
+                        <select id="serviceQuality">
+                            <option disabled selected value="0">-- Choose an option --</option> <!--disabled selected means that though it'll show up, it can't be chosen-->
+                            
+                            <option value="0.1">10% - Outstanding</option>
+                            <option value="0.07">7% - Good</option>
+                            <option value="0.05">5% - It was ok</option>
+                            <option value="0.02">2% - Bad</option>
+                            <option value="0.005">0.5% - Terrble</option>
+                        </select>
+                    </label>
+                    
+                    <label>
+                        How many people are sharing the bill?
+                        <input type="number" min="0" id="totalPeople"> People
+                    </label>
+                    
+                    <button type="button" id="calculate">Calculate!</button>
+            
+                </form>    
+                
+            </div><!-- calculator -->
+            
+            <div id="totalTip">
+                <sup>$</sup><span id="tip">0.00</span><!--the sup means supperscript-->
+                <small id="each">each</small>
+            </div> <!--totaltip-->
+            
+        </div><!-- container -->
+        
+        
+        <script type="text/javascript" src="7.3.%20Script(tipcal).js"></script>
+    </body>
+</html>

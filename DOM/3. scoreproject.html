@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Score Keeping Project</title>
+        
+        <style type="text/css">
+            .winner{
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><span id="playerOneScore">0</span> to <span id="playerTwoScore">0</span></h1>
+        
+        <p>Praying to: <span>5</span></p>
+        <input type="number">
+        
+        <button id="playerOne">Player One</button>
+        <button id="playerTwo">Player Two</button>
+        
+        <button id="reset">Reset</button>
+        
+        <script type="text/javascript">
+            // Initializing all variables
+            var p1Button = document.querySelector("#playerOne");
+            var p2Button = document.querySelector("#playerTwo");
+            var reset = document.querySelector("#reset");
+            var numInput = document.querySelector("input");
+            var winningScoreDisplay = document.querySelector("p span");
+            var p1Display = document.querySelector("#playerOneScore");
+            var p2Display = document.querySelector("#playerTwoScore");
+            var p1Score = 0;
+            var p2Score = 0;
+            var gameOver = false;
+            var winningScore = 5;
+            
+            // Adding score for Player One 
+            p1Button.addEventListener("click", addP1Score);
+            // Adding score for Player Two
+            p2Button.addEventListener("click", addP2Score);
+            // Reseting the score board
+            reset.addEventListener("click", resetScoreBoard);
+            // Changing the number of games to be played
+            numInput.addEventListener("change", function(){
+                winningScore = Number(this.value);
+                winningScoreDisplay.textContent = this.value;
+                // Reset if number of games is changed in the middle of game
+                resetScoreBoard();
+            })
+            
+            // function for adding Player One's score
+            function addP1Score(){
+                if(!gameOver){
+                    p1Score++;
+                    if(p1Score === winningScore){
+                        gameOver = true;
+                        p1Display.classList.add("winner");
+                    }
+                    p1Display.textContent = p1Score;
+                }  
+            }
+            
+            // function for adding Player One's score
+            function addP2Score(){
+                if(!gameOver){
+                    p2Score++;
+                    if(p2Score === winningScore){
+                        gameOver = true;
+                        p2Display.classList.add("winner");
+                    }
+                    p2Display.textContent = p2Score;
+                }
+                  
+            };
+            // function for reseting score board
+            function resetScoreBoard(){
+                p1Score = 0;
+                p2Score = 0;
+                p1Display.textContent = p1Score;
+                p2Display.textContent = p2Score;
+                p1Display.classList.remove("winner");
+                p2Display.classList.remove("winner");
+                gameOver = false;
+            }
+            
+        </script>
+    </body>
+</html>
